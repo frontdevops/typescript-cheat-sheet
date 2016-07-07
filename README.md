@@ -117,6 +117,13 @@ function assign<T extends U, U>(target :T, source :U) {}
 ```
 
 ## Overload
+
+How resolve this exception?
+
+	TS2345: Argument of type '...' is not assignable to parameter of type '...'. Type '...' is not assignable to type '...'
+
+One solution with overload:
+
 ```typescript
 class Some {
 
@@ -201,7 +208,7 @@ function foo<T>(p: Source<T>) :T {
 }
 ```
 
-**Best practice**
+**Best practice (may be?)**
 
 Is the same that typeof === "function" doesn't strip the object type. One way is to check typeof === "function" and assert that as a test for whether it's a callable object or not using **user-defined type guards**.
 
@@ -235,7 +242,7 @@ if (isValidArray(a))
 	a.map( x => x.toUpperCase() );
 ```
 
-**Best practice**
+**With user-defined type guards**
 ```typescript
 let a :string|string[];
 
