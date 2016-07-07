@@ -1,6 +1,6 @@
 # TypeScript Cheat Sheet
 
-Last updated for: TypeScript 1.8.6
+Last updated for: TypeScript 1.8.10
 
 ## Primitive Types
 
