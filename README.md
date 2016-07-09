@@ -227,7 +227,7 @@ Assertion for multi type `let v :string|number` | `parseInt( <string> v )`
 ## User defined type guard functions
 ```typescript
 let isValidArray = (obj :any) :obj is string[] =>
-	/Array/.test(Object.prototype.toString.call(obj)) && 'map' in obj;
+	/Array/.test(Object.prototype.toString.call(obj)) && 'map' in obj && 'function' === typeof obj.map.call;
 
 
 let a :string|string[];
