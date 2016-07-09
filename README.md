@@ -94,8 +94,8 @@ Concept | Code
 --- | ---
 Function | `{ (arg1 :Type, argN :Type) :Type; }` or `(arg1 :Type, argN :Type) => Type;`
 Constructor | `{ new () :ConstructedType; }` or `new () => ConstructedType;`
-Function type with optional param | `(arg1 :Type, optional? :Type) =>; ReturnType`
-Function type with `rest` param | `(arg1 :Type, ...allOtherArgs :Type[]) =>; ReturnType`
+Function type with optional param | `(arg1 :Type, optional? :Type) => ReturnType;`
+Function type with `rest` param | `(arg1 :Type, ...allOtherArgs :Type[]) => ReturnType;`
 Function type with static property | `{ () :Type; staticProp :Type; }`
 Default argument | `function fn(arg1 :Type = 'default') :ReturnType {}`
 Arrow function | `(arg1 :Type) :ReturnType =>; {}` or `(arg1 :Type) :ReturnType =>; Expression`
