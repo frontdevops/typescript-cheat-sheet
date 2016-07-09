@@ -265,9 +265,7 @@ foo = 'abc';
 foo = {}; // Error!
 ```
 
-## Named types (interface, class)
-
-### Interface
+## Interface
 
 ```typescript
  interface IChild extends IParent, SomeClass {
