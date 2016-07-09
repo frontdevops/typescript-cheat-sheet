@@ -226,6 +226,14 @@ Assertion for multi type `let v :string|number` | `parseInt( <string> v )`
 
 ## User defined type guard functions
 ```typescript
+let a :string|string[];
+
+if (((obj :any) :obj is [] => 'map' in obj)(a))
+    a.map( x => x.toUpperCase() );
+```
+
+**Or**
+```typescript
 let isValidArray = (obj :any) :obj is string[] =>
 		/Array/.test(Object.prototype.toString.call(obj))
 		&& 'map' in obj
@@ -237,14 +245,6 @@ let a :string|string[];
 
 if (isValidArray(a))
 	a.map( x => x.toUpperCase() );
-```
-
-**With user-defined type guards**
-```typescript
-let a :string|string[];
-
-if (((obj :any) :obj is [] => 'map' in obj)(a))
-    a.map( x => x.toUpperCase() );
 ```
 
 ## Dinamic type
