@@ -44,7 +44,7 @@ Concept | Code
 Object with implicit Any properties | `{ foo :any; bar :any }` or `{ foo; bar; }` 
 Object with optional property | `{ required :Type; optional? :Type; }`
 Hash map | `{ [key :string] :Type; }`
-Indexable types | `{ [id :number] :Type }`
+Indexable types | `{ [id :number] :Type; }`
 
 ## Arrays
 
@@ -74,7 +74,7 @@ A tuple is a finite ordered list of elements. A tuple in TypeScript is much like
 
 Concept | Code      
 --- | ---
-Tuple of list with first item bumber and second string | `let list :[number, string] = [123, 'abc'] `
+Tuple of list with first item number and second string | `let list :[number, string] = [123, 'abc'] `
 or | `let list :Array<number, string> = [123, 'abc'] `
 
 Tuple type
@@ -125,23 +125,17 @@ How resolve this exception?
 One solution with overload:
 
 ```typescript
-class Some {
-
-	foo(a :string  ) :void;
-	foo(a :string[]) :void;
-	foo(a) {
-		if (!Array.isArray(a)) a = [a];
-		a = a.map(x => x.toUpperCase());
-		console.log(a);
-	}
-
+foo(a :string  ) :void;
+foo(a :string[]) :void;
+foo(a) {
+	if (!Array.isArray(a)) a = [a];
+	a = a.map(x => x.toUpperCase());
+	console.log(a);
 }
 
-let o = new Some;
-
-o.foo('abcdef'); // Ok
-o.foo(['abc', 'def']); // Ok
-o.foo(123); // Error!
+foo('abcdef'); // Ok
+foo(['abc', 'def']); // Ok
+foo(123); // Error!
 ```
 
 ## Generics
