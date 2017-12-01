@@ -247,11 +247,11 @@ if (isValidArray(a))
 	a.map( x => x.toUpperCase() );
 ```
 
-## Dinamic type
+## Dynamic type
 
 Concept | Code
 --- | ---
-Dinamic type of any object | `type typeOfObject = typeof SomeObject;`
+Dynamic type of any object | `type typeOfObject = typeof SomeObject;`
 
 **Example**
 ```typescript
